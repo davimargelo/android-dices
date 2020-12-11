@@ -2,6 +2,7 @@ package com.olegram.dices;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,16 +21,28 @@ public class MainActivity extends AppCompatActivity {
 
     public void changeText(View view) {
         TextView textontop = findViewById(R.id.textontop);
+        Button clickherebutton = findViewById(R.id.clickherebutton);
+
         clicked = !clicked;
-        textontop.setText(clicked ? "Yey!" : "Click below!");
-        rollDice();
+        if (clicked) {
+            rollDice(false);
+            textontop.setText("Gotcha!");
+            clickherebutton.setText("Retry");
+        } else {
+            rollDice(true);
+            textontop.setText("Need a dice?");
+            clickherebutton.setText("Roll");
+        }
     }
 
-    public void rollDice() {
+    public void rollDice(boolean clear) {
         TextView diceResult = findViewById(R.id.diceResult);
-        Random rand = new Random();
-        int upperbound = 6;
-        int generatedInt = rand.nextInt(upperbound) + 1;
-        diceResult.setText(String.valueOf(generatedInt));
+        if(!clear) {
+            Random rand = new Random();
+            int upperbound = 6;
+            int generatedInt = rand.nextInt(upperbound) + 1;
+            diceResult.setText(String.valueOf(generatedInt));
+        } else
+            diceResult.setText("");
     }
 }
