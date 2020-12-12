@@ -26,12 +26,12 @@ public class MainActivity extends AppCompatActivity {
         clicked = !clicked;
         if (clicked) {
             rollDice(false);
-            textontop.setText("Gotcha!");
-            clickherebutton.setText("Retry");
+            textontop.setText(R.string.success_rolled_label);
+            clickherebutton.setText(R.string.retry_button);
         } else {
             rollDice(true);
-            textontop.setText("Need a dice?");
-            clickherebutton.setText("Roll");
+            textontop.setText(R.string.sugestion_dice_label);
+            clickherebutton.setText(R.string.roll_button);
         }
     }
 

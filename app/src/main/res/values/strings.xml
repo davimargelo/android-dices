@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Dices</string>
+    <string name="sugestion_dice_label">Need a dice?</string>
+    <string name="success_rolled_label">Gotcha!</string>
+    <string name="roll_button">Roll</string>
+    <string name="retry_button">Retry</string>
 </resources>
